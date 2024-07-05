@@ -79,6 +79,7 @@
 
 .ant-menu-dark .ant-menu-inline.ant-menu-sub {
   background-color: transparent;
+  color: black;
 }
 
 .ant-menu-title-content > a {
@@ -87,6 +88,7 @@
 
 .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
   background-color: transparent !important;
+  color: #000;
 }
 
 .ant-menu-item .active {

@@ -9,10 +9,20 @@
 .submitBtnContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
+width: 100%;
+
 }
 
 .loginTableContainer {
   margin-top: 30px;
   display: flex;
   justify-content: center;
+}
+
+.ant-row .ant-form-item-row{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
 }

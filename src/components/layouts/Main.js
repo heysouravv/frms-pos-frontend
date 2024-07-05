@@ -23,7 +23,7 @@ function Main({ children }) {
 
   const [visible, setVisible] = useState(false);
   const [placement, setPlacement] = useState("right");
-  const [sidenavColor, setSidenavColor] = useState("#1890ff");
+  const [sidenavColor, setSidenavColor] = useState("#FE4F00");
   const [sidenavType, setSidenavType] = useState("transparent");
   const [fixed, setFixed] = useState(false);
 
@@ -64,7 +64,7 @@ function Main({ children }) {
               theme="light"
               className={styles.siderDrawer}
             >
-              <Sidenav color={sidenavColor} sideNavOpenKeys={sideNavOpenKeys} />
+              <Sidenav  color={sidenavColor} sideNavOpenKeys={sideNavOpenKeys} />
             </Sider>
           </Layout>
         </Drawer>
@@ -77,16 +77,16 @@ function Main({ children }) {
           collapsed={collapsed}
           width={220}
           theme="light"
-          className={styles.siderMain}
+          className={`overflow-hidden ${styles.siderMain}`}
         >
           {collapsed ? (
             ""
           ) : (
             <div>
-              <h3 className="text-white ms-5 mt-2 mb-1 ">
-                POS{" "}
-                <strong style={{ color: "#be3976	", fontWeight: "bold" }}>
-                  OS
+              <h3 className="text-black ms-5 mt-2 mb-1 ">
+                Custom{" "}
+                <strong style={{ color: "#000	", fontWeight: "bold" }}>
+        ERP
                 </strong>
               </h3>
             </div>
@@ -107,7 +107,7 @@ function Main({ children }) {
       >
         {fixed ? (
           <Affix>
-            <AntHeader>
+            <AntHeader >
               <Header
                 onPress={openDrawer}
                 name={pathname}
@@ -138,13 +138,14 @@ function Main({ children }) {
         {isLogged &&
           (pathname.trim() === "dashboard" || pathname.trim() === "") && (
             <QuickLinks
+            
               sideNavOpenKeys={sideNavOpenKeys}
               sideNavOpenKeysHandler={sideNavOpenKeysHandler}
             />
           )}
 
         <Content>{children}</Content>
-        <Footer />
+        {/* <Footer /> */}
       </Layout>
     </Layout>
   );

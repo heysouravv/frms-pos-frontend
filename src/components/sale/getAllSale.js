@@ -252,10 +252,10 @@ const GetAllSale = (props) => {
   return (
     <>
       <PageTitle title={"Back"} />
-      <div className="card card-custom mt-1">
+      <div className="card card-custom mt-1 bg-transparent shadow-none">
         <div className="card-body">
-          <h5 className="d-inline-flex">Sale Invoice List</h5>
-          <div className="card-title d-flex flex-column flex-md-row align-items-center justify-content-md-center mt-1 py-2">
+          {/* <h5 className="d-inline-flex">Sale Invoice List</h5> */}
+          <div className="card-title d-flex flex-column flex-md-row align-items-center justify-content-md-center py-2">
             <div>
               <Form
                 onFinish={onSearchFinish}
@@ -274,7 +274,7 @@ const GetAllSale = (props) => {
                     <Select.Option value="">All</Select.Option>
                     {userList &&
                       userList.map((i) => (
-                        <Select.Option value={i.id}>{i.username}</Select.Option>
+                        <Select.Option value={i.id}>{ i?  i?.username : ""}</Select.Option>
                       ))}
                   </Select>
                 </Form.Item>
@@ -287,16 +287,17 @@ const GetAllSale = (props) => {
                 </div>
 
                 <Form.Item>
-                  <Button
+                  <button
                     onClick={() => setLoading(true)}
                     loading={loading}
-                    type="primary"
+                    // type="primary"
                     htmlType="submit"
+                    
                     size="small"
-					className="salelist-search-btn"
+					className="bg-[#FE4F00] px-[16px] rounded-lg py-[8px] text-white hover:bg-none salelist-search-btn"
                   >
                     <SearchOutlined />
-                  </Button>
+                  </button>
                 </Form.Item>
               </Form>
             </div>
@@ -309,19 +310,33 @@ const GetAllSale = (props) => {
           <br />
           <div>
             <div>
-              <h5>Sales History</h5>
+              <h5 className="font-semibold text-2xl ">Sales History</h5>
               {list && (
                 <div className="card-title d-flex justify-content-end ">
+                 
+
                   <div className="me-2">
+                    <SaleReportPrint
+                      data={list}
+                      date={{ startdate, enddate }}
+                      user={user}
+                      total={total?._sum}
+                      
+                    />
+
+                  </div>
+                  <div className="">
                     <CSVLink
                       data={CSVlist}
-                      className="btn btn-dark btn-sm mb-1"
+                      className=" bg-[#FE4F00] flex items-center gap-x-1 hover:bg-none capitalize text-white  px-[10px] rounded-sm py-[5px] text-sm mb-1"
                       filename="sales"
                     >
+                    <img className="w-8" src="https://img.icons8.com/ffffff/pastel-glyph/64/download--v1.png" alt="download--v1"/>
                       Download CSV
                     </CSVLink>
                   </div>
-                  <div className="me-2" style={{ marginTop: "-4px" }}>
+                  {/* All and paginated option */}
+                  {/* <div className="me-2" style={{ marginTop: "-4px" }}>
                     <Segmented
                       className="text-center rounded danger"
                       size="middle"
@@ -348,16 +363,7 @@ const GetAllSale = (props) => {
                       defaultChecked={totalCount}
                       onChange={onSwitchChange}
                     />
-                  </div>
-
-                  <div>
-                    <SaleReportPrint
-                      data={list}
-                      date={{ startdate, enddate }}
-                      user={user}
-                      total={total?._sum}
-                    />
-                  </div>
+                  </div> */}
                 </div>
               )}
             </div>

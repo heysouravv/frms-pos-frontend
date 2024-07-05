@@ -84,9 +84,9 @@ const SaleProductListCard = ({ list, updateReturn, returnOnChange }) => {
 
   return (
     <Row>
-      <Col span={24} className="mt-2">
+      <Col span={24} className="mt-2 ">
         <div
-          className="header-solid h-full m-2"
+          className="header-solid  h-full m-2"
           bordered={false}
           title={[
             <h6 className="font-semibold m-0 text-center">
@@ -95,8 +95,8 @@ const SaleProductListCard = ({ list, updateReturn, returnOnChange }) => {
           ]}
           bodyStyle={{ paddingTop: "0" }}
         >
-          <div className="col-info">
-            <Table
+          <div className="col-info  ">
+            <Table 
               scroll={{ x: true }}
               loading={!list}
               columns={columns}

@@ -23,15 +23,17 @@ const Dashboard = () => {
       <div>
         <div>
           <div className="mb-3">
+          {/* Grid Main Dashboard */}
             <Row>
-              <Col span={24}>
+              <Col span={24} >
                 <DemoLine />
               </Col>
             </Row>
           </div>
           <div>
-            <Row gutter={[30, 30]}>
-              <Col sm={24} md={24} lg={12} span={24}>
+          {/* Pie chart and graph dahboard */}
+            <Row gutter={[30, 30]} >
+              <Col sm={24} md={24}  lg={12} span={24}>
                 <Card title="Customer Receivable vs Supplier Payable">
                   <DemoPie />
                 </Card>

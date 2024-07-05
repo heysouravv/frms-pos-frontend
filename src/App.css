@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .dark-theme {
   --bg: #1c1b20;
   --bg-secondary: #2e2d35;
@@ -12,14 +16,14 @@
 }
 
 .light-theme {
-  --bg: #ffffff;
+  --bg: #F9FAFB;
   --bg-secondary: #ffffff;
   --text: #000000;
   --body-bg: #f8f8ff;
   --sidenav-bg: #301934;
   --table-cell-row-hover: #fafafa;
   --form-item-label: rgba(0, 0, 0, 0.85);
-  --table-head: rgb(44, 44, 44);
+  --table-head: #F9FAFB;
   --input-border: 1px solid #d9d9d9;
   --quick-links-bg: #f4f4f4;
 }
@@ -35,6 +39,9 @@ body {
 
 .ant-row {
   color: var(--text);
+  display: flex;
+  flex-direction:row;
+  width: 100%;
 }
 
 .ant-layout {
@@ -50,14 +57,18 @@ body {
 }
 
 .ant-layout-sider {
-  background: var(--sidenav-bg);
-  color: ;
+  background: #FFFFFF;
+  color: black;
+border-right: #EAECF0 1px solid;
+  overflow: hidden;
+
 }
 
 .ant-menu.ant-menu-dark,
 .ant-menu-dark .ant-menu-sub,
 .ant-menu.ant-menu-dark .ant-menu-sub {
-  background: var(--sidenav-bg);
+  background: white;
+color:black
 }
 
 .logout-text {
@@ -275,7 +286,7 @@ body {
 .ant-page-header {
   background-color: var(--bg-secondary);
   color: var(--text);
-  border: var(--input-border) !important;
+  /* border: var(--input-border) !important; */
 }
 .ant-page-header span {
   color: var(--text);

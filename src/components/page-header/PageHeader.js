@@ -6,7 +6,7 @@ function PageTitle({ title, subtitle }) {
   return (
     <Fragment>
       <PageHeader
-        className="site-page-header d-none d-lg-block"
+        className="site-page-header bg-transparent  d-none d-lg-block"
         onBack={() => window.history.back()}
         title={title}
         subTitle={subtitle}

@@ -54,19 +54,23 @@ const Sale = (props) => {
 
   return (
     <div>
-      <PageTitle title="Back" />
-
-      <Row gutter={[20]}>
-        <Col span={24} lg={13} xl={14}>
-          <ProductsForSale handleSelectedProds={handleSelectedProds} />
-        </Col>
-        <Col span={24} lg={11} xl={10}>
+      {/* <PageTitle title="Back"  /> */}
+{/* Main Div POS after Back */}
+      <Row gutter={[0]} className="">
+      <p className="font-semibold lg:text-2xl text-[#101828]">Point of Sale</p>
+        <Col span={24} lg={24} xl={24} className="" >
           <AddPos
+          
             selectedProds={selectedProds}
             handleSelectedProdsQty={handleSelectedProdsQty}
             handleSelectedProdsUnitPrice={handleSelectedProdsUnitPrice}
             handleDeleteProd={handleDeleteProd}
+
           />
+        </Col>
+        <Col span={24} lg={24} xl={24} >
+
+          <ProductsForSale handleSelectedProds={handleSelectedProds} />
         </Col>
       </Row>
     </div>

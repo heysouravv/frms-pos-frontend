@@ -165,10 +165,12 @@ const AddPos = ({
 	}, [selectedProds, totalDiscountPaidDue.paid, totalDiscountPaidDue.discount]);
 
 	return (
-		<Card className='mt-3'>
+		// POS Page White div
+		<Card className='my-3 py-0 border border-[#EAECF0] rounded-xl'>
+	
 			<Form
 				form={form}
-				className='m-lg-1'
+				className='m-lg-1  flex flex-col-reverse  '
 				name='dynamic_form_nest_item'
 				// onFinish={onFinish}
 				// onChange={onChange}
@@ -178,7 +180,8 @@ const AddPos = ({
 				autoComplete='off'>
 				<Row gutter={[24, 24]}>
 					<Col span={24}>
-						<div className='d-flex justify-content-between'>
+					{/* Customer Date in POS page */}
+						<div className='d-flex  justify-content-between'>
 							<div className='w-50'>
 								<Form.Item
 									label='Customer '
@@ -232,21 +235,7 @@ const AddPos = ({
 						</div>
 					</Col>
 
-					<Col span={24}>
-						<Form.Item>
-							<Button
-								block
-								type='primary'
-								htmlType='submit'
-								loading={loader}
-								onClick={() => {
-									onClickLoading();
-									onFormSubmit();
-								}}>
-								Sale Product
-							</Button>
-						</Form.Item>
-					</Col>
+			
 					<Col
 						span={24}
 						style={{ border: "1px solid #ccc", padding: "10px 10px" }}>
@@ -257,7 +246,7 @@ const AddPos = ({
 								justifyContent: "space-between",
 							}}>
 							<strong>Total: </strong>
-							<strong>{totalDiscountPaidDue.total} tk</strong>
+							<strong>{totalDiscountPaidDue.total} Rs</strong>
 						</div>
 						<div
 							style={{
@@ -285,7 +274,7 @@ const AddPos = ({
 								justifyContent: "space-between",
 							}}>
 							<strong>Paid Amount: </strong>
-							<strong>{totalDiscountPaidDue.afterDiscount} tk</strong>
+							<strong>{totalDiscountPaidDue.afterDiscount} Rs</strong>
 						</div>
 						<div
 							className='d-flex justify-content-between'
@@ -311,7 +300,7 @@ const AddPos = ({
 								justifyContent: "space-between",
 							}}>
 							<strong>Return Amount: </strong>
-							<strong>{returnAmount} tk</strong>
+							<strong>{returnAmount} Rs</strong>
 						</div>
 						{/* <strong>Paid Amount: </strong>
 				<Form.Item
@@ -338,7 +327,21 @@ const AddPos = ({
 							<strong>{totalDiscountPaidDue.due} tk</strong>*/}
 						{/* </div> */}
 					</Col>
-
+					<Col span={24}>
+						<Form.Item>
+							<Button
+								className="bg-[#FE4F00] text-white border-none hover:scale-100 transition-all duration-150 delay-100 ease-out hover:bg-[#FE4F00] hover:border-none"
+								block
+								htmlType='submit'
+								loading={loader}
+								onClick={() => {
+									onClickLoading();
+									onFormSubmit();
+								}}>
+								Sale Product
+							</Button>
+						</Form.Item>
+					</Col>
 					<Col span={24}>
 						<Products
 							formData={formData}

@@ -125,9 +125,9 @@ const PackingSlip = ({ data }) => {
 				<PrintToPdf ref={componentRef} data={data} invoiceData={invoiceData} />
 			</div>
 			{invoiceData && (
-				<Button type='primary' shape='round' onClick={handlePrint}>
+				<button  className="bg-[#FE4F00] py-[8px] rounded-lg px-1 text-white hover:bg-none border border-none hover:text-[#FE4F00]" shape='round' onClick={handlePrint}>
 					Packing Slip Print
-				</Button>
+				</button>
 			)}
 		</div>
 	);

@@ -27,7 +27,7 @@ const PrintToPdf = forwardRef(({ data, invoiceData }, ref) => {
 							<div className='website'>{invoiceData?.website} </div>
 							<div className='bill-details'>
 								<div className='flex justify-content-center'>
-									<div>BILL NO: {data?.saleInvoiceProduct[0].invoice_id}</div>
+									<div>BILL NO: {data?.saleInvoiceProduct[0]?.invoice_id}</div>
 								</div>
 								<div className='flex justify-content-center'>
 									<div>
@@ -100,9 +100,10 @@ const PosPrint = ({ data }) => {
 				<PrintToPdf ref={componentRef} data={data} invoiceData={invoiceData} />
 			</div>
 			{invoiceData && (
-				<Button type='primary' shape='round' onClick={handlePrint}>
+				
+				<button type='primary' shape='round' className="bg-[#FE4F00] py-[8px] rounded-lg px-1 text-white hover:bg-none border border-none hover:text-[#FE4F00]" onClick={handlePrint}>
 					POS Print
-				</Button>
+				</button>
 			)}
 		</div>
 	);

@@ -84,8 +84,8 @@ const PrintToPdf = forwardRef(
 											<td>
 												<p>{i.id}</p>
 											</td>
-											<td>{i.user.username}</td>
-											<td>{i.customer.name}</td>
+											<td>{i?.user?.username}</td>
+											<td>{i?.customer?.name}</td>
 											<td>
 												{i.saleInvoiceProduct.map((s) => (
 													<p>{s.product.name}</p>
@@ -160,7 +160,7 @@ const SaleReportPrint = ({ data, date, user, total }) => {
 	}, []);
 
 	return (
-		<div>
+		<div className="">
 			{data && (
 				<div className='hidden'>
 					<PrintToPdf
@@ -175,8 +175,9 @@ const SaleReportPrint = ({ data, date, user, total }) => {
 			)}
 			{settingData && (
 				<button
-					className='btn btn-primary btn-sm mb-1 button-size'
+					className='bg-transparent flex items-center gap-x-2 hover:bg-none border-2  px-[10px] rounded-lg py-[4px] border-[#D0D5DD] text-black text-sm  mb-1 button-size'
 					onClick={handlePrint}>
+				<img className="w-8" src="https://img.icons8.com/windows/32/print.png" alt="print"/>
 					Print PDF
 				</button>
 			)}

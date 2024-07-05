@@ -73,18 +73,27 @@ const DetailSale = () => {
         {singleSaleInvoice ? (
           <Fragment key={singleSaleInvoice.id}>
             <Card bordered={false} className="card-custom">
-              <h5 className="m-2">
+              <h5 className="">
                 <i className="bi bi-person-lines-fill"></i>
                 <span className="mr-left">ID : {singleSaleInvoice.id} |</span>
               </h5>
               <div className="card-header d-flex justify-content-center ">
                 <div className="me-2">
                   <Link to={`/sale/return/${id}`}>
-                    <Button type="primary" shape="round">
+                    <button className="bg-[#FE4F00] py-[8px] rounded-lg px-1 text-white hover:bg-none border border-none hover:text-[#FE4F00]" shape="round">
                       {" "}
                       Return Product{" "}
-                    </Button>
+                    </button>
                   </Link>
+                </div>
+                <div className={"text-end me-2"}>
+                  <SaleInvoice data={singleSaleInvoice} />
+                </div>
+                <div className={"text-end me-2"}>
+                  <PackingSlip data={singleSaleInvoice} />
+                </div>
+                <div className={"text-end me-2"}>
+                  <PosPrint data={singleSaleInvoice} />
                 </div>
                 <div className="me-2">
                   <Popover
@@ -108,18 +117,11 @@ const DetailSale = () => {
                     ></Button>
                   </Popover>
                 </div>
-                <div className={"text-end me-2"}>
-                  <SaleInvoice data={singleSaleInvoice} />
-                </div>
-                <div className={"text-end me-2"}>
-                  <PackingSlip data={singleSaleInvoice} />
-                </div>
-                <div className={"text-end me-2"}>
-                  <PosPrint data={singleSaleInvoice} />
-                </div>
               </div>
               <div className="card-body">
-                <Row justify="space-around">
+                <Row 
+             
+                 justify="space-around"  className="pos-sale">
                   <Col span={11}>
                     <Badge.Ribbon
                       text={status}

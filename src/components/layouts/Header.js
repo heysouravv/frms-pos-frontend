@@ -25,7 +25,7 @@ function Header({ onPress, collapsed, handleCollapsed }) {
 
 	const isLogged = localStorage.getItem("isLogged");
 	const user = localStorage.getItem("user");
-
+// Dark Mode and Logout button
 	const items = [
 		{
 			key: "1",
@@ -66,20 +66,21 @@ function Header({ onPress, collapsed, handleCollapsed }) {
 
 	return (
 		<>
-			<Row gutter={[24, 0]}>
+			<Row  className="w-full flex justify-between">
 				<Col span={24} md={4}>
-					<div className={styles.sidebarTogglerPC}>
+					<div className={`z-50 cursor-pointer ${styles.sidebarTogglerPC}`}>
 						{isLogged &&
 							React.createElement(
 								collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
 								{
-									className: `${styles.trigger}`,
+									className: `${styles.trigger} z-50`,
 									onClick: () => handleCollapsed(!collapsed),
 								}
 							)}
 					</div>
 				</Col>
-				<Col span={24} md={20} className={styles.headerControl}>
+				{/* Page header with dark mode and Logout button */}
+				<Col span={24} lg={16} md={20} className={`${styles.headerControl} flex items-end `}>
 					<DarkModeSwitch
 						style={{ margin: "1rem" }}
 						checked={isDarkMode}
@@ -100,7 +101,7 @@ function Header({ onPress, collapsed, handleCollapsed }) {
           )} */}
 
 					{!isLogged && (
-						<Link to='/auth/login' className='btn-sign-in text-dark'>
+						<Link to='/auth/login' className='btn-sign-in  text-dark'>
 							<span></span>
 						</Link>
 					)}
@@ -116,7 +117,7 @@ function Header({ onPress, collapsed, handleCollapsed }) {
 					)}
 
 					{isLogged && (
-						<div>
+						<div >
 							<Dropdown
 								overlay={<Menu items={items} />}
 								placement='bottomLeft'

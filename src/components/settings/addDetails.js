@@ -64,14 +64,14 @@ const AddDetails = () => {
 
 	return (
 		<Fragment>
-			<Row className='mr-top' justify='center'>
+			<Row className='mr-top ' justify='center'>
 				<Col
 					xs={24}
 					sm={24}
 					md={24}
 					lg={11}
 					xl={11}
-					className='border rounded column-design'>
+					className='border border-[#EAECF0] rounded-lg column-design'>
 					<Card bordered={false}>
 						<Title level={4} className='m-2 text-center'>
 							Invoice Setting
@@ -88,7 +88,7 @@ const AddDetails = () => {
 								}}
 								labelWrap
 								wrapperCol={{
-									span: 16,
+									span: 24,
 								}}
 								onFinish={onFinish}
 								onFinishFailed={onFinishFailed}
@@ -186,16 +186,17 @@ const AddDetails = () => {
 								</Form.Item>
 
 								<Form.Item
-									style={{ marginBottom: "10px" }}
-									className={styles.addBtnContainer}>
-									<Button
-										type='primary'
-										htmlType='submit'
+									style={{ marginBottom: "10px", }}
+									className={`w-full mx-auto flex justify-center items-center ${styles.addBtnContainer}`}>
+									<button
+										type='submit'
+										// htmlType='submit'
+										className="bg-[#FE4F00] w-full mx-auto py-[8px] rounded-lg px-1 text-white hover:bg-none border border-none hover:text-[#FE4F00]"
 										shape='round'
 										loading={loader}
 										onClick={onClickLoading}>
 										Update Details
-									</Button>
+									</button>
 								</Form.Item>
 							</Form>
 						) : (

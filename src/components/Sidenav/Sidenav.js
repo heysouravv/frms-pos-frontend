@@ -266,12 +266,12 @@ const Sidenav = ({ color, sideNavOpenKeys }) => {
 	];
 
 	return (
-		<div>
+		<div className="overflow-hidden ">
 			<Menu
-				theme='dark'
+				theme='white'
 				mode='inline'
 				items={menu}
-				className='sidenav-menu'
+				className='sidenav-menu  overflow-hidden'
 				// openKeys={[sideNavOpenKeys]}
 				// style={{ backgroundColor: "transparent" }}
 			/>

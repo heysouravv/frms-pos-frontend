@@ -70,7 +70,7 @@ const AddCustPaymentByInvoice = () => {
 	return (
 		<>
 			<PageTitle title={"Back"} />
-			<Row className='mr-top'>
+			<Row className='flex justify-center items-center'>
 				<Col
 					xs={24}
 					sm={24}
@@ -182,15 +182,16 @@ const AddCustPaymentByInvoice = () => {
 									offset: 8,
 									span: 16,
 								}}>
-								<Button
+								<button
 									onClick={() => setLoader(true)}
-									block
+									// block
 									type='primary'
-									htmlType='submit'
-									shape='round'
+									// htmlType='submit'
+									// shape='round'
+									className="bg-[#FE4F00] w-full hover:bg-none text-white  px-[10px] rounded-sm py-[5px] border-none text-sm mb-1"
 									loading={loader}>
 									Pay Now
-								</Button>
+								</button>
 							</Form.Item>
 						</Form>
 					</Card>

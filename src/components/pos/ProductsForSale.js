@@ -135,7 +135,7 @@ export default function ProductsForSale({ handleSelectedProds }) {
 		<>
 			<div class='d-flex justify-content-around'>
 				<div className='mt-2'>
-					<Form
+					{/* <Form
 						form={form}
 						layout='inline'
 						labelCol={{
@@ -144,10 +144,13 @@ export default function ProductsForSale({ handleSelectedProds }) {
 						wrapperCol={{
 							span: 16,
 						}}
+						className="flex flex-row "
+						// Search box in pos page
+						// className="bg-red-500"
 						onFinish={onFinish}
 						onFinishFailed={onFinishFailed}
 						autoComplete='off'>
-						<Form.Item label='Search' name='s_id'>
+						<Form.Item label='Search' className="flex flex-row" name='s_id'>
 							<Input />
 						</Form.Item>
 
@@ -155,7 +158,9 @@ export default function ProductsForSale({ handleSelectedProds }) {
 							wrapperCol={{
 								offset: 0,
 								span: 16,
-							}}>
+							}}
+							className="flex"
+							>
 							<Button
 								loading={loading}
 								onClick={() => setLoading(true)}
@@ -166,10 +171,10 @@ export default function ProductsForSale({ handleSelectedProds }) {
 								Search
 							</Button>
 						</Form.Item>
-					</Form>
+					</Form> */}
 				</div>
 
-				<div className='mt-2'>
+				{/* <div className='mt-2'>
 					<Select
 						name='product_sub_category_id'
 						loading={!subCategory}
@@ -193,7 +198,7 @@ export default function ProductsForSale({ handleSelectedProds }) {
 								</Select.Option>
 							))}
 					</Select>
-				</div>
+				</div> */}
 			</div>
 			<Row className='mt-2' gutter={[20, 20]}>
 				{prodList ? (

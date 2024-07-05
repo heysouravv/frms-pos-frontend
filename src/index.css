@@ -1,5 +1,7 @@
 @import "~antd/dist/antd.css";
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html,
 body {
   margin: 0;
@@ -20,8 +22,14 @@ code {
   color: antiquewhite !important;
 }
 
+.pos-sale{
+  display: flex;
+  flex-direction: column;
+  
+}
+
 .ant-table-thead > tr > th {
-  color: #efefef !important;
+  color: black !important;
   font-weight: 700;
   background-color: transparent;
   font-size: 13px;

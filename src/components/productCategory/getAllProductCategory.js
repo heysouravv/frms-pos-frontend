@@ -75,7 +75,7 @@ function CustomTable({ list, total }) {
             <div>
               <CSVLink
                 data={list}
-                className="btn btn-dark btn-sm mb-1"
+                className="btn bg-[#FE4F00] text-white btn-sm mb-1"
                 filename="customer"
               >
                 Download CSV
