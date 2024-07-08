@@ -199,8 +199,9 @@ const GetAllProd = (props) => {
 						<div className='me-2' style={{ marginTop: "4px" }}>
 							<CSVLink
 								data={CSVlist}
-								className='btn btn-dark btn-sm mb-1'
+								className=' bg-[#FE4F00] capitalize  flex items-center gap-x-2 hover:bg-none  text-white  px-[14px] rounded-sm py-[5px] text-sm mb-1'
 								filename='products'>
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down-to-line"><path d="M12 17V3"/><path d="m6 11 6 6 6-6"/><path d="M19 21H5"/></svg>
 								Download CSV
 							</CSVLink>
 						</div>

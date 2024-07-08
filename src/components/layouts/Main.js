@@ -1,4 +1,4 @@
-import { Affix, Drawer, Layout } from "antd";
+import { Affix, Drawer, Image, Layout } from "antd";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Sidenav from "../Sidenav/Sidenav";
@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import styles from "./Main.module.css";
 import QuickLinks from "./QuickLinks";
+import logo from '../../assets/Aciahea.svg'
 
 const { Header: AntHeader, Content, Sider } = Layout;
 
@@ -64,6 +65,7 @@ function Main({ children }) {
               theme="light"
               className={styles.siderDrawer}
             >
+            
               <Sidenav  color={sidenavColor} sideNavOpenKeys={sideNavOpenKeys} />
             </Sider>
           </Layout>
@@ -83,7 +85,7 @@ function Main({ children }) {
             ""
           ) : (
             <div>
-              <h3 className="text-black ms-5 mt-2 mb-1 ">
+              <h3 className="text-black ms-5 my-1 ">
                 Custom{" "}
                 <strong style={{ color: "#000	", fontWeight: "bold" }}>
         ERP
@@ -92,7 +94,13 @@ function Main({ children }) {
             </div>
           )}
           {isLogged && (
+            <>
+            {/* <div className="w-full flex justify-between ms-1 mr-4 items-center pl-2 pr-1 bg-[#F9FAFB] border border-[#D0D5DD] py-[3px]">
+		<p className="text-base"><Image src={logo} preview={false} alt="logo" width={20}  className="mx-auto" /> Achaia Studio</p>
+		<p>Basic</p>
+	</div> */}
             <Sidenav color={sidenavColor} sideNavOpenKeys={sideNavOpenKeys} />
+            </>
           )}
         </Sider>
       )}

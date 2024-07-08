@@ -89,7 +89,7 @@ const UploadMany = ({ urlPath }) => {
 				<br />
 
 				<Button
-					className='mt-2'
+					className='mt-2 hover:bg-[#FFF1EB] hover:text-[#FE4F00] border border-[#D0D5DD] bg-[#FFF1EB] text-[#FE4F00]'
 					type='primary'
 					disabled={
 						!file ||

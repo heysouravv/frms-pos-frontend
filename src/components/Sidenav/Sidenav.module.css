@@ -1,3 +1,17 @@
 .site-layout .site-layout-background {
   background: #fff;
+  gap: 16px;
+}
+
+.selectedItem {
+  border-right: 2px solid transparent; /* Adjust the border size as needed */
+}
+
+.sidenav-menu::after{
+  border: none;
+
+}
+
+.sidenav .ant-menu-inline .ant-menu-selected::after, .ant-menu-inline .ant-menu-item-selected::after{
+  opacity: 0;
 }

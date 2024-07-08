@@ -2,7 +2,7 @@ import { Button, Card, Col, Form, Input, Row, Typography } from "antd";
 import styles from "./AddProdCat.module.css";
 
 import { Fragment } from "react";
-
+import {PlusOutlined} from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import { addProductCategory } from "../../redux/actions/productCategory/addProductCategoryAciton";
 import UploadMany from "../Card/UploadMany";
@@ -47,10 +47,10 @@ const AddProductCategory = () => {
               className=""
               name="basic"
               labelCol={{
-                span: 7,
+                span: 24,
               }}
               wrapperCol={{
-                span: 16,
+                span: 24,
               }}
               initialValues={{
                 remember: true,
@@ -63,6 +63,7 @@ const AddProductCategory = () => {
                 style={{ marginBottom: "10px" }}
                 label="Name"
                 name="name"
+                className=""
                 rules={[
                   {
                     required: true,
@@ -77,16 +78,17 @@ const AddProductCategory = () => {
                 style={{ marginBottom: "10px" }}
                 className={styles.addProdCatBtnContainer}
               >
-                <Button type="primary" htmlType="submit" shape="round">
+                <button className="bg-[#FE4F00] mx-auto flex items-center justify-center gap-x-2 w-full hover:bg-none capitalize text-white  px-[14px] rounded-sm py-[5px] text-sm mb-1" type="primary" htmlType="submit" shape="round">
+              <PlusOutlined color="#fff" width="20px" />
                   Add Category
-                </Button>
+                </button>
               </Form.Item>
             </Form>
           </Card>
         </Col>
         <Col xs={24} sm={24} md={24} lg={11} xl={11} className="rounded column-design">
           <Card bordered={false} className={styles.importCsvCard}>
-            <Title level={4} className="m-2 text-center">
+            <Title level={4} className="m-2 text-center bg-transparent text-black ">
               Import From CSV
             </Title>
             <UploadMany urlPath={"category"} />

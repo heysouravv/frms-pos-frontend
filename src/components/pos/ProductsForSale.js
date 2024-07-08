@@ -71,7 +71,7 @@ export default function ProductsForSale({ handleSelectedProds }) {
 	const [status, setStatus] = useState("true");
 
 	const onShowSizeChange = (current, pageSize) => {};
-
+// console.log("prodList", prodList);
 	const Products = ({ item, index }) => {
 		console.log("item", item);
 		return (

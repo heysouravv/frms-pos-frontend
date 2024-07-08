@@ -112,12 +112,13 @@ const AddProd = () => {
 						<Form
 							form={form}
 							name='basic'
+							// className="flex justify-start items-start text-left w-full flex-col"
 							labelCol={{
 								span: 7,
 							}}
 							labelWrap
 							wrapperCol={{
-								span: 16,
+								span: 24,
 							}}
 							initialValues={{
 								remember: true,
@@ -129,6 +130,7 @@ const AddProd = () => {
 								style={{ marginBottom: "15px" }}
 								label='Name'
 								name='name'
+								className="whitespace-nowrap"
 								rules={[
 									{
 										required: true,
@@ -174,7 +176,7 @@ const AddProd = () => {
               </Form.Item> */}
 
 							<Form.Item
-								style={{ marginBottom: "15px" }}
+								style={{ marginBottom: "15px",display:'flex',justifyContent:'start',alignItems:'start' }}
 								name='product_sub_category_id'
 								label='Select Subcategory '
 								rules={[
@@ -373,14 +375,16 @@ const AddProd = () => {
 							</Form.Item>
 
 							<Form.Item
-								style={{ marginBottom: "15px" }}
-								className={styles.addProductBtnContainer}>
+								style={{ marginBottom: "15px",width:'100%',margin:'auto',display:'flex',justifyContent:'center' }}
+								className={`add-product-btn ${styles.addProductBtnContainer}`}>
 								<Button
 									type='primary'
 									htmlType='submit'
 									shape='round'
+									className="bg-[#FE4F00] flex hover:bg-[#FE4F00] items-center justify-center  border-none w-full "
 									loading={loader}
 									onClick={onClickLoading}>
+								<PlusOutlined color="#fff" />
 									Add Product
 								</Button>
 							</Form.Item>
@@ -392,7 +396,7 @@ const AddProd = () => {
 						className={`${styles.importCsvCard} column-design`}
 						extra={
 							<>
-								<div className='px-4 py-1 bg-black/80 text-white border rounded-md'>
+								<div className=' py-1 bg-transparent  text-white  rounded-md'>
 									<CSVLink
 										data={[
 											[
@@ -448,8 +452,9 @@ const AddProd = () => {
 												10,
 											],
 										]}
-										className='text-dark '
+										className=' font-medium  bg-[#FE4F00] p-[14px] flex items-center gap-x-2 hover:bg-none capitalize text-white  px-[14px] rounded-sm py-[5px] text-sm mb-1'
 										filename={"sample product"}>
+										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down-to-line"><path d="M12 17V3"/><path d="m6 11 6 6 6-6"/><path d="M19 21H5"/></svg>
 										Download Sample CSV
 									</CSVLink>
 								</div>

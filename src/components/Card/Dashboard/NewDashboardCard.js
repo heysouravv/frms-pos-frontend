@@ -9,20 +9,20 @@ const NewDashboardCard = ({ information }) => {
           <div className="col-xl-3 col-sm-6 col-12">
             <div className="card dashboard-card">
               <div className="card-content">
-                <div className="card-body dashboard-card-body" style={{borderRadius: "10px", background: "linear-gradient(90deg, #8CB8ED 10%, #5A8DE0 75%)"}}>
+                <div className="card-body dashboard-card-body" style={{borderRadius: "10px", background:"#fff"}}>
                   <div className="media d-flex">
                     <div className="media-body text-left">
-                      <h3 className="">
+                      <h3 className="" style={{color:"#FE4F00"}}>
                         {information?.purchase_total
                           ? information?.purchase_total
                           : 0}
                       </h3>
-                      <span className="">Total Purchase</span>
+                      <span className="" style={{color:"#FE4F00"}}>Total Purchase</span>
                     </div>
                     <div className="align-self-center">
                       <i
                         className="icon-cloud-download font-large-2 float-right"
-                        style={{ color: "#fff	" }}
+                        style={{ color: "#FE4F00" }}
                       ></i>
                     </div>
                   </div>
@@ -33,18 +33,19 @@ const NewDashboardCard = ({ information }) => {
           <div className="col-xl-3 col-sm-6 col-12">
             <div className="card dashboard-card">
               <div className="card-content">
-                <div className="card-body dashboard-card-body" style={{borderRadius: "10px", background: "linear-gradient(90deg, #BD5FD3 10%, #7E3C8E 75%)"}}>
+                <div className="card-body dashboard-card-body" style={{borderRadius: "10px", background: "#fff"}}>
                   <div className="media d-flex">
                     <div className="media-body text-left">
-                      <h3 className="">
+                      <h3 className="" style={{color:"#FE4F00"}}>
                         {information?.sale_total ? information?.sale_total : 0}
+
                       </h3>
-                      <span className="">Total Sale</span>
+                      <span className="" style={{color:"#FE4F00"}}>Total Sale</span>
                     </div>
                     <div className="align-self-center">
                       <i
                         className="icon-rocket font-large-2 float-right"
-                        style={{ color: "#fff	" }}
+                        style={{ color: "#FE4F00" }}
                       ></i>
                     </div>
                   </div>
@@ -56,20 +57,20 @@ const NewDashboardCard = ({ information }) => {
           <div className="col-xl-3 col-sm-6 col-12">
             <div className="card dashboard-card">
               <div className="card-content">
-                <div className="card-body dashboard-card-body" style={{borderRadius: "10px", background: "linear-gradient(90deg, #65E5AB 10%, #52B289 75%)"}}>
+                <div className="card-body dashboard-card-body" style={{borderRadius: "10px", background: "#fff"}}>
                   <div className="media d-flex">
                     <div className="media-body text-left">
-                      <h3 className="">
+                      <h3 className="" style={{color:"#FE4F00"}}>
                         {information?.sale_profit
                           ? information?.sale_profit
                           : 0}
                       </h3>
-                      <span className="">Total Profit</span>
+                      <span className="" style={{color:"#FE4F00"}}>Total Profit</span>
                     </div>
                     <div className="align-self-center">
                       <i
                         className="icon-wallet font-large-2 float-right"
-                        style={{ color: "#fff	" }}
+                        style={{ color: "#FE4F00" }}
                       ></i>
                     </div>
                   </div>
@@ -80,18 +81,18 @@ const NewDashboardCard = ({ information }) => {
           <div className="col-xl-3 col-sm-6 col-12">
             <div className="card dashboard-card">
               <div className="card-content">
-                <div className="card-body dashboard-card-body" style={{borderRadius: "10px", background: "linear-gradient(90deg, #E0489B 10%, #9E1057 75%)"}}>
+                <div className="card-body dashboard-card-body" style={{borderRadius: "10px", background: "#fff"}}>
                   <div className="media d-flex">
                     <div className="media-body text-left">
-                      <h3 className="">
+                      <h3 className="" style={{color:"#FE4F00"}}>
                         {information?.sale_count ? information?.sale_count : 0}
                       </h3>
-                      <span className="">Total Sale</span>
+                      <span className="" style={{color:"#FE4F00"}}>Total Sale</span>
                     </div>
                     <div className="align-self-center">
                       <i
                         className="icon-wallet font-large-2 float-right"
-                        style={{ color: "#fff	" }}
+                        style={{ color: "#FE4F00" }}
                       ></i>
                     </div>
                   </div>
