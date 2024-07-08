@@ -58,7 +58,7 @@ const AddCust = () => {
 								span: 7,
 							}}
 							wrapperCol={{
-								span: 16,
+								span: 24,
 							}}
 							initialValues={{
 								remember: true,
@@ -114,6 +114,7 @@ const AddCust = () => {
 									onClick={onClick}
 									loading={loading}
 									type='primary'
+									className=" w-full hover:bg-[#FE4F00] bg-[#FE4F00] border-none text-center mx-auto justify-center flex items-center gap-x-2 hover:bg-none capitalize text-white  px-[14px] rounded-sm py-[5px] text-sm mb-1"
 									htmlType='submit'
 									shape='round'>
 									Add Customer

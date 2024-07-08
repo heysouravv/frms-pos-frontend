@@ -10,7 +10,7 @@ import {
   Select,
   Typography
 } from "antd";
-
+import {PlusOutlined} from "@ant-design/icons";
 import { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadAllDesignation } from "../../redux/actions/designation/getDesignationAction";
@@ -71,9 +71,9 @@ const AddUser = () => {
           xs={24}
           sm={24}
           md={24}
-          lg={16}
-          xl={12}
-          className="column-design border rounded bg-white"
+          lg={24}
+          xl={24}
+          className="column-design border rounded w-full bg-white"
         >
           <Card bordered={false}>
             <Title level={4} className="m-2 text-center">
@@ -83,10 +83,10 @@ const AddUser = () => {
               form={form}
               name="basic"
               labelCol={{
-                span: 6,
+                span: 24,
               }}
               wrapperCol={{
-                span: 18,
+                span: 24,
               }}
               initialValues={{
                 remember: true,
@@ -311,8 +311,10 @@ const AddUser = () => {
                   type="primary"
                   htmlType="submit"
                   shape="round"
+                  className="bg-[#FE4F00] border-none text-center mx-auto justify-center flex items-center gap-x-2 hover:bg-none capitalize text-white  px-[14px] rounded-sm py-[5px] text-sm mb-1"
                   loading={loader}
                 >
+                <PlusOutlined/>
                   Add New Staff
                 </Button>
               </Form.Item>

@@ -6,7 +6,7 @@ import { Fragment } from "react";
 import { useDispatch } from "react-redux";
 import { addProductBrand } from "../../redux/actions/productBrand/addProductBrandAciton";
 import UploadMany from "../Card/UploadMany";
-
+import {PlusOutlined} from "@ant-design/icons";
 const AddProductBrand = () => {
   const dispatch = useDispatch();
   const { Title } = Typography;
@@ -47,10 +47,10 @@ const AddProductBrand = () => {
               className=""
               name="basic"
               labelCol={{
-                span: 7,
+                span: 24,
               }}
               wrapperCol={{
-                span: 16,
+                span: 24,
               }}
               initialValues={{
                 remember: true,
@@ -77,7 +77,8 @@ const AddProductBrand = () => {
                 style={{ marginBottom: "10px" }}
                 className={styles.addProdBrandBtnContainer}
               >
-                <Button type="primary" htmlType="submit" shape="round">
+                <Button className="border-none border bg-[#FE4F00] justify-center mx-auto flex items-center gap-x-2 w-full hover:bg-none capitalize text-white  px-[14px] rounded-sm py-[5px] text-sm mb-1" type="primary" htmlType="submit" shape="round">
+                 <PlusOutlined color="#fff" width={20} />
                   Add Brand
                 </Button>
               </Form.Item>

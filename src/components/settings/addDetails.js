@@ -69,8 +69,8 @@ const AddDetails = () => {
 					xs={24}
 					sm={24}
 					md={24}
-					lg={11}
-					xl={11}
+					lg={24}
+					xl={24}
 					className='border border-[#EAECF0] rounded-lg column-design'>
 					<Card bordered={false}>
 						<Title level={4} className='m-2 text-center'>
@@ -84,7 +84,7 @@ const AddDetails = () => {
 								form={form}
 								name='basic'
 								labelCol={{
-									span: 7,
+									span: 24,
 								}}
 								labelWrap
 								wrapperCol={{

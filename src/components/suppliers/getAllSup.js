@@ -85,7 +85,9 @@ function CustomTable({ list, total, status }) {
               }
               placement="bottomLeft"
             >
-              <Button>Column Visibility</Button>
+          <Button className="border border-[#D0D5DD] text-black flex items-center justify-center gap-x-2 font-medium hover:text-black hover:font-semibold transition-all duration-150 delay-100 ease-in-out" >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+              Column Visibility</Button>
             </Dropdown>
           </div>
         )}
@@ -133,17 +135,18 @@ const GetAllSup = (props) => {
   return (
     <div className="card column-design">
       <div className="card-body">
-        <h5>
-          <i className="bi bi-card-list"> Suppliers List</i>
+        <h5 className="uppercase font-semibold">
+          Suppliers List
         </h5>
         {list && (
           <div className="card-title d-flex justify-content-end">
             <div className="me-2" style={{ marginTop: "4px" }}>
               <CSVLink
                 data={list}
-                className="btn btn-dark btn-sm mb-1"
+                className="bg-[#FE4F00] border-none text-center mx-auto justify-center flex items-center gap-x-2 hover:bg-none capitalize text-white  px-[14px] rounded-sm py-[5px] text-sm mb-1"
                 filename="suppliers"
               >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down-to-line"><path d="M12 17V3"/><path d="m6 11 6 6 6-6"/><path d="M19 21H5"/></svg>
                 Download CSV
               </CSVLink>
             </div>

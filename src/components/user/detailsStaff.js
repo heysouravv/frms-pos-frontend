@@ -72,8 +72,9 @@ const DetailStaff = () => {
                     <Button
                       type="primary"
                       shape="round"
+                      className="bg-[#FE4F00] border-none hover:bg-[#FE4F00]"
                       icon={<EditOutlined />}
-                    ></Button>
+                    >Edit</Button>
                   </Link>
                   <Popover
                     className="m-2"

@@ -77,11 +77,14 @@ const DetailsPurch = () => {
                 <div className="card-header d-flex justify-content-between">
                   <div className="me-2">
                     <Link to={`/purchase/return/${id}`}>
-                      <Button type="primary" shape="round">
+                      <Button type="primary" className=" bg-[#FE4F00] border-none flex items-center gap-x-2 hover:bg-none capitalize text-white  px-[14px] rounded-sm py-[5px] text-sm mb-1" shape="round">
                         {" "}
                         Return Product{" "}
                       </Button>
                     </Link>
+                  </div>
+                  <div className={" text-end me-2"}>
+                    <PurchaseInvoice data={singlePurchaseInvoice} />
                   </div>
                   <div className="me-2">
                     <Popover
@@ -104,9 +107,6 @@ const DetailsPurch = () => {
                         icon={<DeleteOutlined />}
                       ></Button>
                     </Popover>
-                  </div>
-                  <div className={"text-end me-2"}>
-                    <PurchaseInvoice data={singlePurchaseInvoice} />
                   </div>
                 </div>
               </div>

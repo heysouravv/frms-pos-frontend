@@ -82,9 +82,9 @@ const AddTransaction = () => {
           xs={24}
           sm={24}
           md={24}
-          lg={16}
-          xl={12}
-          className="column-design border rounded bg-white"
+          lg={24}
+          xl={24}
+          className="column-design border rounded bg-white w-full"
         >
           <Card bordered={false}>
             <Title level={4} className="m-2 text-center">
@@ -94,10 +94,10 @@ const AddTransaction = () => {
               form={form}
               name="basic"
               labelCol={{
-                span: 8,
+                span: 24,
               }}
               wrapperCol={{
-                span: 16,
+                span: 24,
               }}
               initialValues={{
                 remember: true,
@@ -227,6 +227,7 @@ const AddTransaction = () => {
                   type="primary"
                   htmlType="submit"
                   shape="round"
+                  className="w-1/3   hover:bg-[#FE4F00] bg-[#FE4F00] border-none text-center mx-auto justify-center flex items-center gap-x-2 hover:bg-none capitalize text-white  px-[14px] rounded-sm py-[5px] text-sm mb-1"
                   loading={loader}
                   onClick={() => setLoader(true)}
                 >

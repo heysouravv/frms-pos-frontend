@@ -32,8 +32,8 @@ const BalanceSheet = () => {
 						<h5 className='mt-2 mb-2 font-weight-bold'> Assets</h5>
 						<thead className='thead-dark'>
 							<tr>
-								<th scope='col'>Account</th>
-								<th scope='col'>Amount</th>
+								<th scope='col' className="text-black">Account</th>
+								<th scope='col' className="text-black">Amount</th>
 							</tr>
 						</thead>
 						<tbody>

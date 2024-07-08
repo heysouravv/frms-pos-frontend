@@ -13,7 +13,7 @@ import { CSVLink } from "react-csv";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { addRole, getRoles } from "./roleApis";
-
+import {PlusOutlined} from "@ant-design/icons";
 function CustomTable({ list }) {
   const [columnItems, setColumnItems] = useState([]);
   const [columnsToShow, setColumnsToShow] = useState([]);
@@ -81,14 +81,15 @@ function CustomTable({ list }) {
   return (
     <Card>
       <div className="text-center my-2 d-flex justify-content-between">
-        <h5 className="role-list-title">Role List</h5>
+        <h5 className="role-list-title uppercase font-semibold">Role List</h5>
         {list && (
           <div>
             <CSVLink
               data={list}
-              className="btn btn-dark btn-sm mb-1"
+              className="bg-[#FE4F00] flex justify-center items-center gap-x-2 text-white px-[14px] py-[12px] rounded-md font-semibold hover:bg-[#FE4F00] transition-all duration-150 delay-100 ease-in-out"
               filename="roles"
             >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down-to-line"><path d="M12 17V3"/><path d="m6 11 6 6 6-6"/><path d="M19 21H5"/></svg>
               Download CSV
             </CSVLink>
           </div>
@@ -103,7 +104,9 @@ function CustomTable({ list }) {
             }
             placement="bottomLeft"
           >
-            <Button>Column Visibility</Button>
+        <Button className="border border-[#D0D5DD] text-black flex items-center justify-center gap-x-2 font-medium hover:text-black hover:font-semibold transition-all duration-150 delay-100 ease-in-out" >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+              Column Visibility</Button>
           </Dropdown>
         </div>
       )}
@@ -147,14 +150,14 @@ const Role = () => {
     setLoader(false);
   };
   return (
-    <Fragment bordered={false}>
-      <Row className="mr-top">
+    <Fragment bordered={false} >
+      <Row className="mr-top flex justify-center">
         <Col
           xs={24}
           sm={24}
           md={24}
-          lg={16}
-          xl={12}
+          lg={10}
+          xl={10}
           className="column-design border rounded card-custom"
         >
           <Title level={4} className="m-2 text-center">
@@ -201,9 +204,11 @@ const Role = () => {
                   type="primary"
                   size="small"
                   htmlType="submit"
+                  className="bg-[#FE4F00] hover:bg-[#FE4F00] flex items-center justify-center border-none"
                   block
                   loading={loader}
                 >
+                <PlusOutlined/>
                   Add New Role
                 </Button>
               </Form.Item>

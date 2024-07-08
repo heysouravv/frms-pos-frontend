@@ -17,13 +17,13 @@ const DashboardCard = ({ information, count, isCustomer, title }) => {
 									}}>
 									<div className='media d-flex'>
 										<div className='media-body  text-left'>
-											<h3 className='' style={{color:"#FE4F00"}}>{count?.id ? count?.id : 0}</h3>
-											<span className='' style={{color:"#FE4F00"}}>Invoice</span>
+											<h3 className='' style={{color:"#000"}}>{count?.id ? count?.id : 0}</h3>
+											<span className='' style={{color:"#000"}}>Invoice</span>
 										</div>
 										<div className='align-self-center'>
 											<i
 												className='icon-cloud-download font-large-2 float-right'
-												style={{ color: "#FE4F00	" }}></i>
+												style={{ color: "#FE4F00" }}></i>
 										</div>
 									</div>
 								</div>
@@ -42,12 +42,12 @@ const DashboardCard = ({ information, count, isCustomer, title }) => {
 									}}>
 									<div className='media d-flex'>
 										<div className='media-body text-left'>
-											<h3 className='' style={{color:"#FE4F00"}}>
+											<h3 className='' style={{color:"#000"}}>
 												{information?.total_amount
 													? information?.total_amount
 													: 0}
 											</h3>
-											<span className='' style={{color:"#FE4F00"}}>Total Amount</span>
+											<span className='' style={{color:"#000"}}>Total Amount</span>
 										</div>
 										<div className='align-self-center'>
 											<i
@@ -72,10 +72,10 @@ const DashboardCard = ({ information, count, isCustomer, title }) => {
 									}}>
 									<div className='media d-flex'>
 										<div className='media-body text-left'>
-											<h3 className='' style={{color:"#FE4F00"}}>
+											<h3 className='' style={{color:"#000"}}>
 												{information?.profit ? information?.profit : 0}
 											</h3>
-											<span className='' style={{color:"#FE4F00"}}>Total Profit</span>
+											<span className='' style={{color:"#000"}}>Total Profit</span>
 										</div>
 										<div className='align-self-center'>
 											<i
@@ -100,12 +100,12 @@ const DashboardCard = ({ information, count, isCustomer, title }) => {
 									{isCustomer ? (
 										<div className='media d-flex'>
 											<div className='media-body text-left'>
-												<h3 className='' style={{color:"#FE4F00"}}>
+												<h3 className='' style={{color:"#000"}}>
 													{information?.paid_amount
 														? information?.paid_amount
 														: 0}
 												</h3>
-												<span className='' style={{color:"#FE4F00"}}>Paid Amount</span>
+												<span className='' style={{color:"#000"}}>Paid Amount</span>
 											</div>
 											<div className='align-self-center'>
 												<i
@@ -116,17 +116,17 @@ const DashboardCard = ({ information, count, isCustomer, title }) => {
 									) : (
 										<div className='media d-flex'>
 											<div className='media-body text-left'>
-												<h3 className=''>
+												<h3 className='text-black'>
 													{information?.due_amount
 														? information?.due_amount
 														: 0}
 												</h3>
-												<span className=''>Due Amount</span>
+												<span className='text-black'>Due Amount</span>
 											</div>
 											<div className='align-self-center'>
 												<i
 													className='icon-wallet font-large-2 float-right'
-													style={{ color: "#fff	" }}></i>
+													style={{ color: "#FE4F00	" }}></i>
 											</div>
 										</div>
 									)}

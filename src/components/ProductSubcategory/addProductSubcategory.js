@@ -8,7 +8,7 @@ import { addProductSubCategory } from "../../redux/actions/productSubCategory/ad
 import UploadMany from "../Card/UploadMany";
 import { toast } from "react-toastify";
 import { loadAllProductCategory } from "../../redux/actions/productCategory/getProductCategoryAction";
-
+import {PlusOutlined} from "@ant-design/icons";
 const AddProductCategory = () => {
 	const category = useSelector((state) => state.productCategories?.list);
 	const dispatch = useDispatch();
@@ -61,10 +61,10 @@ const AddProductCategory = () => {
 							className=''
 							name='basic'
 							labelCol={{
-								span: 7,
+								span: 24,
 							}}
 							wrapperCol={{
-								span: 16,
+								span: 24,
 							}}
 							initialValues={{
 								remember: true,
@@ -119,14 +119,16 @@ const AddProductCategory = () => {
 							</Form.Item>
 
 							<Form.Item
-								style={{ marginBottom: "10px" }}
-								className={styles.addProdSubCatBtnContainer}>
+								style={{ marginBottom: "10px",width:"100%",textAlign:"center" }}
+								className={`w-full ${styles.addProdSubCatBtnContainer} flex justify-center items-center`}>
 								<Button
+								className=" bg-[#FE4F00] w-full text-center mx-auto flex justify-center items-center gap-x-2 hover:bg-[#FE4F00] hover:border-none hover:shadow-lg transition-all duration-100 delay-100 ease-out capitalize text-white  px-[14px] rounded-sm py-[7px] text-sm mb-1"
 									onClick={onClick}
 									loading={loading}
-									type='primary'
+									
 									htmlType='submit'
 									shape='round'>
+									<PlusOutlined color="#fff" width={20} />
 									Add Subcategory
 								</Button>
 							</Form.Item>

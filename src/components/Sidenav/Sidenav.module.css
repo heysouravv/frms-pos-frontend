@@ -12,6 +12,13 @@
 
 }
 
-.sidenav .ant-menu-inline .ant-menu-selected::after, .ant-menu-inline .ant-menu-item-selected::after{
+
+
+.sidenav .ant-menu-inline .ant-menu-selected::after, .ant-menu-inline .ant-menu-item-selected:active{
   opacity: 0;
+}
+
+.active {
+  border-color: none;
+  outline: none;
 }

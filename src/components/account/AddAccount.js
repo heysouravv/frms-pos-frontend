@@ -2,7 +2,7 @@ import { Button, Card, Col, Form, Input, Row, Select, Typography } from "antd";
 import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import styles from "./AddNewAccount.module.css";
-
+import {PlusOutlined} from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addAccount } from "../../redux/actions/account/addAccountAction";
@@ -58,7 +58,7 @@ const AddAccoun = () => {
   return (
     <div>
       <Row className="mr-top ">
-        <Col xs={24} sm={24} md={24} lg={16} xl={12} className="border rounded column-design">
+        <Col xs={24} sm={24} md={24} lg={24} xl={24} className="border rounded column-design">
           <Card bordered={false}>
             <Title level={4} className="m-2 text-center">
               Add Account
@@ -67,11 +67,11 @@ const AddAccoun = () => {
               form={form}
               name="basic"
               labelCol={{
-                span: 7,
+                span: 24,
               }}
               labelWrap
               wrapperCol={{
-                span: 16,
+                span: 24,
               }}
               initialValues={{
                 remember: true,
@@ -95,7 +95,7 @@ const AddAccoun = () => {
               </Form.Item>
 
               <Form.Item
-                style={{ marginBottom: "10px" }}
+                style={{ marginBottom: "10px", width: "100%"}}
                 name="account_id"
                 label="Account Type"
                 rules={[
@@ -109,7 +109,7 @@ const AddAccoun = () => {
                   loading={!accounts}
                   showSearch
                   style={{
-                    width: 200,
+                    width: "100%",
                   }}
                   placeholder="Select Account Type"
                   optionFilterProp="children"
@@ -139,9 +139,11 @@ const AddAccoun = () => {
                   type="primary"
                   htmlType="submit"
                   shape="round"
+                  className=" hover:bg-[#FE4F00] transition-all duration-200 ease-out delay-150 hover:scale-105 bg-[#FE4F00] w-full border-none text-center mx-auto justify-center flex items-center gap-x-2 hover:bg-none capitalize text-white  px-[14px] rounded-sm py-[5px] text-sm mb-1"
                   loading={loader}
                   onClick={() => setLoader(true)}
                 >
+                  <PlusOutlined color="#fff" />
                   Add New Account
                 </Button>
               </Form.Item>

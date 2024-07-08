@@ -19,7 +19,7 @@ import {
 } from "@ant-design/icons";
 import { Menu } from "antd";
 import React, { useState } from "react";
-
+import rightarrow from '../../assets/rightArrow.svg'
 import { NavLink } from "react-router-dom";
 import  "./Sidenav.module.css";
 
@@ -27,7 +27,7 @@ const Sidenav = ({ color, sideNavOpenKeys }) => {
 	const menu = [
 		{
 			label: (
-				<NavLink to='/dashboard'>
+				<NavLink to='/dashboard'  className="outline-none border-transparent">
 					<span>Dashboard</span>
 				</NavLink>
 			),
@@ -303,13 +303,15 @@ const settingsWithStyles = applyStylesToMenuItems(settings);
 
 
 	return (
-		<div className="flex-col justify-between overflow-auto flex  h-[90vh]">
+		<div className="flex-col justify-between no-scrollbar overflow-scroll flex  h-[90vh]">
 
 			<Menu
 				theme='white'
 				mode='inline'
 				items={menuWithStyles}
-            className={`sidenav-menu`}
+
+            className={`sidenav-menu overflow-scroll no-scrollbar border-transparent outline-none`}
+			style={{outline: 'none',border: 'transparent'}}
             onClick={handleMenuClick}
 				// openKeys={[sideNavOpenKeys]}
 				// style={{ backgroundColor: "transparent" }}
@@ -319,7 +321,7 @@ const settingsWithStyles = applyStylesToMenuItems(settings);
 				mode='inline'
 				items={settingsWithStyles}
 				onClick={handleMenuClick}
-				className='sidenav-menu hover:text-[#FE4F00] border-t border-[#EAECF0] border-r-0 overflow-x-hidden'
+				className='sidenav-menu hover:text-[#FE4F00] no-scrollbar border-t border-[#EAECF0] border-r-0 overflow-hidden'
 				// openKeys={[sideNavOpenKeys]}
 				// style={{ backgroundColor: "transparent" }}
 			/>

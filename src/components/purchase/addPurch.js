@@ -246,8 +246,8 @@ const AddPurch = () => {
         autoComplete="off"
       >
         <Row className="mr-top" gutter={[24, 24]}>
-          <Col span={24} className="border rounded column-design">
-            <Title level={4} className="m-2 text-center">
+          <Col span={24} className="border-b border-[#D0D5DD]">
+            <Title level={4} className="m-2 text-center ">
               Purchase New Products
             </Title>
           </Col>
@@ -337,7 +337,7 @@ const AddPurch = () => {
               }}
             >
               <strong>Total: </strong>
-              <strong>{totalDiscountPaidDue.total} tk</strong>
+              <strong>{totalDiscountPaidDue.total} Rs</strong>
             </div>
             <div
               style={{
@@ -374,7 +374,7 @@ const AddPurch = () => {
               <div>
                 <strong>After Discount: </strong>
               </div>
-              <strong>{totalDiscountPaidDue.afterDiscount} tk</strong>
+              <strong>{totalDiscountPaidDue.afterDiscount} Rs</strong>
             </div>
             <div
               style={{
@@ -411,7 +411,7 @@ const AddPurch = () => {
               }}
             >
               <strong>Due Amount: </strong>
-              <strong>{totalDiscountPaidDue.due} tk</strong>
+              <strong>{totalDiscountPaidDue.due} Rs</strong>
             </div>
 
             <Form.Item style={{ marginTop: "15px" }}>
@@ -419,6 +419,7 @@ const AddPurch = () => {
                 block
                 type="primary"
                 htmlType="submit"
+                className=" bg-[#FE4F00] border-none text-center mx-auto justify-center flex items-center gap-x-2 hover:bg-none capitalize text-white  px-[14px] rounded-sm py-[5px] text-sm mb-1"
                 loading={loader}
                 onClick={() => {
                   onClickLoading();

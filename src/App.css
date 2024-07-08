@@ -320,7 +320,10 @@ color:black
   color: var(--text);
   background-color: var(--bg);
 }
-
+.no-scrollbar{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 .ant-dropdown-trigger {
   color: var(--text);
   background-color: var(--bg);

@@ -48,7 +48,7 @@ const AddSup = () => {
               }}
               labelWrap
               wrapperCol={{
-                span: 16,
+                span: 24,
               }}
               initialValues={{
                 remember: true,
@@ -101,7 +101,7 @@ const AddSup = () => {
                 style={{ marginBottom: "10px" }}
                 className={styles.addSupplierBtnContainer}
                 >
-                <Button type="primary" htmlType="submit" shape="round">
+                <Button type="primary" className=" bg-[#FE4F00] border-none w-full text-center justify-center  flex items-center gap-x-2 hover:bg-none capitalize text-white  px-[14px] rounded-sm py-[5px] text-sm mb-1" htmlType="submit" shape="round">
                   Add Supplier
                 </Button>
               </Form.Item>

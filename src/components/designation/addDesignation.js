@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { addDesignation } from "../../redux/actions/designation/addDesignationAciton";
 import UploadMany from "../Card/UploadMany";
 import styles from "./AddDesignation.module.css";
-
+import {PlusOutlined} from "@ant-design/icons";
 const AddDesignation = () => {
   const dispatch = useDispatch();
   const { Title } = Typography;
@@ -54,10 +54,10 @@ const AddDesignation = () => {
               form={form}
               name="basic"
               labelCol={{
-                span: 7,
+                span: 24,
               }}
               wrapperCol={{
-                span: 16,
+                span: 24,
               }}
               initialValues={{
                 remember: true,
@@ -89,8 +89,10 @@ const AddDesignation = () => {
                   type="primary"
                   htmlType="submit"
                   shape="round"
+                  className="bg-[#FE4F00] w-full border-none"
                   loading={loader}
                 >
+                <PlusOutlined/>
                   Add designation
                 </Button>
               </Form.Item>

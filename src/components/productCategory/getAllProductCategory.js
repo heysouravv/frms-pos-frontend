@@ -70,7 +70,7 @@ function CustomTable({ list, total }) {
     <div className="card column-design">
       <div className="card-body">
         <div className="card-title d-flex justify-content-between">
-          <h5>Category List</h5>
+          <h5 className="font-semibold">Category List</h5>
           {list && (
             <div>
               <CSVLink
@@ -94,7 +94,9 @@ function CustomTable({ list, total }) {
               }
               placement="bottomLeft"
             >
-              <Button>Column Visibility</Button>
+          <Button className="border border-[#D0D5DD] text-black flex items-center justify-center gap-x-2 font-medium hover:text-black hover:font-semibold transition-all duration-150 delay-100 ease-in-out" >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+              Column Visibility</Button>
             </Dropdown>
           </div>
         )}
