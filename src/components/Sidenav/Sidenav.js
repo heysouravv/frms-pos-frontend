@@ -19,7 +19,6 @@ import {
 } from "@ant-design/icons";
 import { Menu } from "antd";
 import React, { useState } from "react";
-import rightarrow from '../../assets/rightArrow.svg'
 import { NavLink } from "react-router-dom";
 import  "./Sidenav.module.css";
 

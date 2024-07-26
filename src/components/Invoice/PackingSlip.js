@@ -11,7 +11,7 @@ import "./style.css";
 const PrintToPdf = forwardRef(({ data, invoiceData }, ref) => {
 	return (
 		<Fragment>
-			<div ref={ref} className='wrapper'>
+			<div ref={ref} className='wrapper w-full'>
 				<div className='box2'>
 					<h1>{invoiceData?.company_name}</h1>
 					<h3>{invoiceData?.tag_line}</h3>

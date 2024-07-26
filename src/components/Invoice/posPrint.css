@@ -7,10 +7,8 @@ table {
 	border-collapse: collapse;
 }
 @page {
-	size: 2.8in 11in;
-	margin-top: 0cm;
-	margin-left: 0cm;
-	margin-right: 0cm;
+	size: 600mm 150mm; /* This is closer to a standard receipt size */
+	margin: 0;
 }
 td.description,
 th.description {
@@ -53,7 +51,7 @@ img {
 	font-size: 15px;
 	padding: 10px 0;
 	width: 1000px;
-	max-width: 90%;
+	max-width: 100%;
 	margin: 0 auto;
 	grid-auto-rows: minmax(70px, auto);
 }
