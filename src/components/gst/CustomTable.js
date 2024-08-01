@@ -10,7 +10,7 @@ function CustomTable({addedDiscount}) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('/gst');
+        const response = await axios.get('/gst/active');
         const rawData = response.data;
 
         // Ensure rawData is an array

@@ -4,6 +4,7 @@ import {
 	Col,
 	DatePicker,
 	Form,
+	Input,
 	InputNumber,
 	Row,
 	Select,
@@ -19,6 +20,7 @@ import Products from "./Products";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const { Title } = Typography;
 
@@ -60,6 +62,17 @@ const AddPos = ({
 		due: 0,
 	});
 
+	const handleTotalChange = (e) => {
+		const newTotal = parseFloat(e.target.value) || 0;
+		setTotalDiscountPaidDue((prev) => ({
+		  ...prev,
+		  total: newTotal,
+		  afterDiscount: newTotal - (newTotal * discount / 100),
+		  due: newTotal - (newTotal * discount / 100) - prev.paid,
+		}));
+	  };
+
+	  
 	const handleDiscount = (discountAmount) => {
 		const afterDiscount = totalDiscountPaidDue.total - discountAmount;
 		let dueAmount = totalDiscountPaidDue.total - discountAmount;
@@ -163,7 +176,28 @@ const AddPos = ({
 			}));
 		}
 	}, [selectedProds, totalDiscountPaidDue.paid, totalDiscountPaidDue.discount]);
+	const [discount, setDiscount] = useState(0);
 
+	useEffect(() => {
+	  const fetchDiscount = async () => {
+		try {
+		  const response = await axios.get('/discount');
+		  const discountPercentage = response.data.percentage;
+		  setDiscount(discountPercentage);
+		} catch (error) {
+		  console.error('Error fetching discount:', error);
+		}
+	  };
+  
+	  fetchDiscount();
+	}, []);
+  
+	const calculateDiscountedTotal = (total, discountPercentage) => {
+	  return total - (total * discountPercentage / 100);
+	};
+  
+	const discountedTotal = calculateDiscountedTotal(totalDiscountPaidDue.total, discount);
+  
 	return (
 		// POS Page White div
 		<Card className='my-3 py-0 border border-[#EAECF0] rounded-xl'>
@@ -239,34 +273,30 @@ const AddPos = ({
 					<Col
 						span={24}
 						style={{ border: "1px solid #ccc", padding: "10px 10px" }}>
+						 <div
+        style={{
+          padding: "10px 20px",
+          display: "flex",
+          justifyContent: "space-between",
+        }}>
+        <strong>Total: </strong>
+        <Input
+          type="number"
+          value={totalDiscountPaidDue.total}
+          onChange={handleTotalChange}
+          style={{ width: '100px' }}
+        />
+      </div>
 						<div
-							style={{
-								padding: "10px 20px",
-								display: "flex",
-								justifyContent: "space-between",
-							}}>
-							<strong>Total: </strong>
-							<strong>{totalDiscountPaidDue.total} Rs</strong>
-						</div>
-						<div
-							style={{
-								padding: "10px 20px",
-								display: "flex",
-								justifyContent: "space-between",
-								alignItems: "center",
-							}}>
-							<strong>Discount: </strong>
-							<Form.Item
-								name='discount'
-								rules={[
-									{
-										required: true,
-										message: "Please input discount!",
-									},
-								]}>
-								<InputNumber type='number' onChange={handleDiscount} />
-							</Form.Item>
-						</div>
+        style={{
+          padding: "10px 20px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}>
+        <strong>Discounted Total: </strong>
+        <strong>{discountedTotal} Rs</strong>
+      </div>
 						<div
 							style={{
 								padding: "10px 20px",
